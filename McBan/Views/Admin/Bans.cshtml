@@ -1,0 +1,32 @@
+﻿@model ICollection<McBan.Models.McUser>
+@{
+    ViewBag.Title = "Bans";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>UUID</th>
+            <th>Banned On</th>
+            <th>Banned Until</th>
+            <th>Banned By</th>
+            <th>Username</th>
+            <th>Reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model) {
+            <tr>
+                <td>@user.UUID</td>
+                <td>@user.BannedOn</td>
+                <td>@user.BannedUntil</td>
+                <th>@user.BannedBy</th>
+                <th>@user.Username</th>
+                <th>@user.Reason</th>
+            </tr>
+        }
+    </tbody>
+</table>
+

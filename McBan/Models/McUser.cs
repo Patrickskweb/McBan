@@ -5,6 +5,11 @@ using System.Web;
 
 namespace McBan.Models {
     public class McUser {
+        
+        public McUser() {
+            Expired = false;
+        }
+
         public int Id { get; set; }
 
         public string UUID { get; set; } //Minecraft UUID
