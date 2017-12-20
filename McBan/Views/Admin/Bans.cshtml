@@ -8,7 +8,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>UUID</th>
+            <th>Name</th>
             <th>Banned On</th>
             <th>Banned Until</th>
             <th>Banned By</th>
@@ -19,12 +19,28 @@
     <tbody>
         @foreach (var user in Model) {
             <tr>
-                <td>@user.UUID</td>
+                <td>
+                    <a href="#">
+                        <p align="center">
+                            <img class="avatar noselect" src="https://crafatar.com/avatars/@user.UUID?size=25" />
+                            <br />
+                            @user.Username
+                        </p>
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <p align="center">
+                            <img class="avatar noselect" src="https://crafatar.com/avatars/@user.BannedBy?size=25" />
+                            <br />
+                            @user.BannedByUsername
+                        </p>
+                    </a>
+                </td>
+                <td>@user.Reason</td>
                 <td>@user.BannedOn</td>
                 <td>@user.BannedUntil</td>
-                <td>@user.BannedBy</td>
-                <td>@user.Username</td>
-                <td>@user.Reason</td>
+
             </tr>
         }
     </tbody>

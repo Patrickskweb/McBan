@@ -14,6 +14,7 @@ namespace McBan.Models {
 
         public string UUID { get; set; } //Minecraft UUID
         public string BannedBy { get; set; } //Will also be set to a UUID
+        public string BannedByUsername { get; set; }
         public DateTime BannedOn { get; set; } //Date and time user was banned.
         public DateTime BannedUntil { get; set; } //Date and time the ban will expire
         public string Username { get; set; } //Minecraft username at time of ban, can be updated/verified by button on the page.
